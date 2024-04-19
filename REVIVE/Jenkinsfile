@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+
+
+        stage('create a dir') {
+            steps {
+                sh '''
+                mkdir Raoul2
+                rm -rf Raoul2
+                '''
+
+            }
+        }
+
+        stage('create a file') {
+            steps {
+                sh  '''
+                touch text.txt
+                rm -rf text.txt
+                '''
+
+            }
+        }
+
+    }
+}
+
